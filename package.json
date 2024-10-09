@@ -48,5 +48,6 @@
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13"
   },
-  "homepage": "https://fonqp.github.io/"
+  "homepage": "https://fonqp.github.io/",
+  "description": "FONQP IIT Khargpur"
 }

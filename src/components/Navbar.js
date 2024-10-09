@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         {/* <div className="text-white text-2xl font-bold">FONQP Lab</div> */}
-        <img className="h-6 ml-10 mt-1 mb-1" src="/logo-crp.png" alt="FONQP Lab" />
+        <Link to="/"><img className="h-6 ml-10 mt-1 mb-1" src="/logo-crp.png" alt="FONQP Lab" /></Link>
 
         {/* Hamburger Menu for Small Screens */}
         <div className="md:hidden">
@@ -55,6 +55,9 @@ const Navbar = () => {
           <Link to="/publications" className="text-gray-800 hover:text-gray-600">
             Publications
           </Link>
+          <Link to="/projects" className="text-gray-800 hover:text-gray-600">
+            Projects
+          </Link>
           <Link to="/contact" className="text-gray-800 hover:text-gray-600">
             Contact
           </Link>
@@ -78,6 +81,9 @@ const Navbar = () => {
           </Link>
           <Link to="/publications" className="block text-gray-800 hover:text-gray-600">
             Publications
+          </Link>
+          <Link to="/projects" className="block text-gray-800 hover:text-gray-600">
+            Projects
           </Link>
           <Link to="/contact" className="block text-gray-800 hover:text-gray-600">
             Contact

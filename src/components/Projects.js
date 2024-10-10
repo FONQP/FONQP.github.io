@@ -16,7 +16,7 @@ const projects = () => {
     return (
         <div className="min-h-screen py-10">
             <div className="container mx-auto px-4">
-                <h1 className="text-5xl font-bold text-center mb-10 text-gray-700">Projects</h1>
+                <h1 className="text-5xl font-bold text-center mb-10 text-gray-700">🏗️Projects</h1>
 
                 <div className="p-8 md:p-12 lg:p-16 mx-5">
                     <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -42,6 +42,7 @@ const projects = () => {
                             </Link>
                         ))}
                     </ul>
+                    <h1 className="text-xl font-bold text-center mt-6 text-gray-400">🛠️ Work in progress...</h1>
                 </div>
             </div>
         </div>

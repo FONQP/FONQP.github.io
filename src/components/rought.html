@@ -1,0 +1,105 @@
+<!-- i want a html with body background with sparse random size circles with colors only from the set {257180, F2E5BF, FD8B51, CB6040} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Circles</title>
+    <style>
+        body {
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #257180;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const colors = ['#257180', '#F2E5BF', '#FD8B51', '#CB6040'];
+        const body = document.querySelector('body');
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const maxCircles = 50;
+        const minSize = 10;
+        const maxSize = 100;
+        const maxColor = colors.length;
+        for (let i = 0; i < maxCircles; i++) {
+            const circle = document.createElement('div');
+            const size = Math.floor(Math.random() * (maxSize - minSize + 1) + minSize);
+            const color = colors[Math.floor(Math.random() * maxColor)];
+            const x = Math.floor(Math.random() * width);
+            const y = Math.floor(Math.random() * height);
+            circle.style.width = `${size}px`;
+            circle.style.height = `${size}px`;
+            circle.style.backgroundColor = color;
+            circle.style.left = `${x}px`;
+            circle.style.top = `${y}px`;
+            circle.style.opacity = 0.8;
+            circle.classList.add('circle');
+            // there should be np overlap between circles
+            const circles = document.querySelectorAll('.circle');
+            let overlap = false;
+            for (let j = 0; j < circles.length; j++) {
+                const other = circles[j];
+                const dx = x - parseInt(other.style.left);
+                const dy = y - parseInt(other.style.top);
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < size + parseInt(other.style.width)) {
+                    overlap = true;
+                    break;
+                }
+            }
+            if (overlap) {
+                i--;
+                continue;
+            }
+
+            body.appendChild(circle);
+        }
+        // save background image as svg
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}"><rect width="100%" height="100%" fill="#fff" />`;
+        const circles = document.querySelectorAll('.circle');
+        for (let i = 0; i < circles.length; i++) {
+            const circle = circles[i];
+            const x = parseInt(circle.style.left) + parseInt(circle.style.width) / 2;
+            const y = parseInt(circle.style.top) + parseInt(circle.style.height) / 2;
+            const color = circle.style.backgroundColor;
+            const size = parseInt(circle.style.width) / 2;
+            svg += `<circle cx="${x}" cy="${y}" r="${size}" fill="${color}" />`;
+        }
+        svg += '</svg>';
+        const svgBlob = new Blob([svg], { type: 'image/svg+xml' });
+        const svgUrl = URL.createObjectURL(svgBlob);
+        const a = document.createElement('a');
+        a.href = svgUrl;
+        a.download = 'background.svg';
+        a.click();
+
+        // how to save as png
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+        img.onload = () => {
+            ctx.drawImage(img, 0, 0);
+            const a = document.createElement('a');
+            a.href = canvas.toDataURL('D:/');
+            a.download = 'background.png';
+            a.click();
+        };
+        img.src = svgUrl;
+
+
+    </script>
+
+
+</body>
+</html>

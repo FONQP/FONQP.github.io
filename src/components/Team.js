@@ -7,8 +7,8 @@ const teamData = {
     title: 'Lab Supervisor',
     photo: 'team/Sir.jpeg', // Path to supervisor photo
     bio: 'Our beloved supervisor, Prof. Shailendra Kr. Varshney, is a Professor at Dept. of E&ECE, IIT Kharagpur.',
-    scholar: 'https://scholar.google.com/citations?user=8Z6Z9Y4AAAAJ&hl=en',
-    email: 'mailto:sha.gamil.com',
+    scholar: 'https://scholar.google.com/citations?hl=en&user=7KsrPeEAAAAJ',
+    email: 'mailto:skvarshney@ece.iitkgp.ac.in',
   },
   labmates: [
     {
@@ -16,26 +16,41 @@ const teamData = {
       title: 'PhD Student',
       photo: 'team/Shubhanshi-Sharma.png', // Path to labmate photo
       bio: 'Shubhanshi focuses on the study of Metamaterials',
-      scholar: 'https://scholar.google.com/citations?user=8Z6Z9Y4AAAAJ&hl=en',
-      email: 'mailto:sha.gamil.com',
+      scholar: 'https://scholar.google.com/citations?user=NP7y3wYAAAAJ&hl=en&oi=sra',
+      email: 'mailto:shubhanshi0107@gmail.com',
     },
     {
       name: 'Sauradeep Kar',
       title: 'PhD Student',
       photo: 'team/kar.jpeg', // Path to labmate photo
       bio: 'Sauradeep focuses on the study of non-linear optics',
-      scholar: 'https://scholar.google.com/citations?user=8Z6Z9Y4AAAAJ&hl=en',
-      email: 'mailto:sha.gamil.com',
+      email: 'mailto:sauradeepkar@gmail.com',
     },
     {
       name: 'Monica Pradhan',
       title: 'PhD Student',
       photo: 'team/mnc.jpeg', // Path to labmate photo
       bio: 'Monica focuses on the study of Metamaterials',
-      scholar: 'https://scholar.google.com/citations?user=8Z6Z9Y4AAAAJ&hl=en',
-      email: 'mailto:sha.gamil.com',
+      scholar: 'https://scholar.google.com/citations?hl=en&user=Utll60MAAAAJ',
+      email: 'mailto:mncpradhan@gmail.com',
       github: 'github.com/monica',
-      website: 'https://monica.com',
+    },
+    {
+      name: 'Vedant Borde',
+      title: 'MS Student',
+      photo: 'team/vb.jpeg', // Path to labmate photo
+      bio: 'Optical wireless underwater commmunication',
+      email: 'mailto:vpborde99@gmail.com',
+    },
+    {
+      name: 'Prasanna Paithankar',
+      title: 'BTech Student',
+      photo: 'team/pbp.jpg', // Path to labmate photo
+      bio: 'Exploring randomness',
+      scholar: 'https://scholar.google.com/citations?user=iA_DfQQAAAAJ&hl=en',
+      email: 'mailto:paithankarprasanna@gamil.com',
+      github: 'github.com/PrasannaPaithankar',
+      website: 'https://cse.iitkgp.ac.in/~prasannabp/',
     },
     // Add more labmates as needed
   ],
@@ -46,14 +61,22 @@ const teamData = {
       photo: 'team/goat.jpeg', // Path to labmate photo
       bio: 'Now pursuing PhD at University of Washington, Seattle.',
       scholar: 'https://scholar.google.com/citations?user=8Z6Z9Y4AAAAJ&hl=en',
-      email: 'mailto:sha.gamil.com',
+      email: 'mailto:sridhar.singhal@gmail.com',
+      github: 'github.com/sridhar-singhal',
+    },
+    {
+      name: 'Amritash Sharma',
+      title: 'Long-Term Intern',
+      photo: 'team/fulcrum.jpg', // Path to labmate photo
+      bio: 'Now pursuing PhD at IIT Gandhinagar.',
+      email: 'mailto:sridhar.singhal@gmail.com',
     },
   ],
 };
 
 const Teams = () => {
   return (
-    // add a moving bg gradient from sky to white
+    // add a background image (bg2.png) to the body
     <div className="min-h-screen py-10">
       <div className="container mx-auto px-4">
         {/* text color dark gray */}
@@ -105,12 +128,14 @@ const Teams = () => {
                 <p className="text-gray-600 text-center mt-3">{labmate.bio}</p>
 
                 <div className="mt-4 flex justify-center items-center space-x-4">
-                  <a
-                    href={labmate.scholar}
-                    className="text-blue-600 hover:underline"
-                  >
-                    <img src="team/scholar.png" alt="Google Scholar" className="w-6 h-6 inline-block" />
-                  </a>
+                  {labmate.scholar && (
+                    <a
+                      href={labmate.scholar}
+                      className="text-blue-600 hover:underline"
+                    >
+                      <img src="team/scholar.png" alt="Google Scholar" className="w-6 h-6 inline-block" />
+                    </a>
+                  )}
                   <a
                     href={labmate.email}
                     className="text-blue-600 hover:underline ml-4"
@@ -160,12 +185,14 @@ const Teams = () => {
                 <p className="text-gray-600 text-center mt-3">{labmate.bio}</p>
 
                 <div className="mt-4 flex justify-center items-center space-x-4">
-                  <a
-                    href={labmate.scholar}
-                    className="text-blue-600 hover:underline"
-                  >
-                    <img src="team/scholar.png" alt="Google Scholar" className="w-6 h-6 inline-block" />
-                  </a>
+                  {labmate.scholar && (
+                    <a
+                      href={labmate.scholar}
+                      className="text-blue-600 hover:underline"
+                    >
+                      <img src="team/scholar.png" alt="Google Scholar" className="w-6 h-6 inline-block" />
+                    </a>
+                  )}
                   <a
                     href={labmate.email}
                     className="text-blue-600 hover:underline ml-4"

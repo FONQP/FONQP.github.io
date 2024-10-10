@@ -29,7 +29,7 @@ const Publications = () => {
   return (
     <div className="min-h-screen py-10">
       <div className="container mx-auto px-4">
-        <h1 className="text-5xl font-bold text-center mb-10 text-gray-700">Our Publications</h1>
+        <h1 className="text-5xl font-bold text-center mb-10 text-gray-700">📚Our Publications</h1>
 
         <div className="bg-white shadow-lg rounded-lg p-8 md:p-12 lg:p-16 mx-5">
           {/* list publications like [1] title, authors, journal, year in a single line*/}
@@ -54,6 +54,7 @@ const Publications = () => {
               </li>
             ))}
           </ul>
+          <h1 className="text-xl font-bold text-center mt-6 text-gray-400">🛠️ Work in progress...</h1>
         </div>
       </div>
     </div>

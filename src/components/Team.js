@@ -6,7 +6,7 @@ const teamData = {
     name: 'Prof. Shailendra Kr. Varshney',
     title: 'Lab Supervisor',
     photo: 'team/Sir.jpeg', // Path to supervisor photo
-    bio: 'Our beloved supervisor, Prof. Shailendra Kr. Varshney, is a Professor at Dept. of E&ECE, IIT Kharagpur.',
+    bio: 'Our supervisor, Prof. Shailendra Kr. Varshney, is a Professor at Dept. of E&ECE, IIT Kharagpur.',
     scholar: 'https://scholar.google.com/citations?hl=en&user=7KsrPeEAAAAJ',
     email: 'mailto:skvarshney@ece.iitkgp.ac.in',
   },
